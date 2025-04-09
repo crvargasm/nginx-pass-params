@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    
+    location / {
+        return 302 https://${BACKEND_HOST}:${BACKEND_PORT};
+    }
+}

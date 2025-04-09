@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx:stable-alpine3.20
+    container_name: nginx_redirect
+    volumes:
+      - ./nginx/nginx.conf.template:/etc/nginx/templates/default.conf.template
+    environment:
+      - BACKEND_HOST=openai.com
+      - BACKEND_PORT=443
+    ports:
+      - "81:80"
